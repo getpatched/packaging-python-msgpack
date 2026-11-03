@@ -21,7 +21,9 @@ The Debian Security Tracker currently lists both source versions as vulnerable. 
 
 ## Build and verification
 
-The GetPatched platform workflow builds each declared target from its pinned source archives, installs the candidate package in the target image, runs the baseline and patched regression, compares package-aware scan results, and retains verification reports. Both targets are configured for public release only after these checks pass. The current recipes are development candidates; passing a local test alone does not constitute release approval, and no binaries have been published.
+The GetPatched platform workflow builds each declared target from its pinned source archives, installs the candidate package in the target image, runs the baseline and patched regression, compares package-aware scan results, and retains verification reports. Both targets are configured for public release only after these checks pass. Local development verification on 3 November 2026 passed for both targets: each Debian package build passed its 117 upstream tests, the installed vulnerable binary crashed on the regression while the patched binary completed cleanly, the candidate-only package-aware scan changed CVE-2026-57585 from one finding to zero, and the signed temporary APT client installed the exact binary and fetched the source package. The evidence is still undergoing hosted CI and independent review; these candidate builds are not approved releases, and no binaries have been published.
+
+Trivy 0.70.0 continues to report CVE-2026-57585 against both patched binaries because its database does not recognize these custom `+getpatched1` versions. Debian OSV returned no record for this CVE for either baseline or candidate, so OSV is not remediation evidence. The candidate-only package-aware scan is the CVE comparison used here; raw Trivy output and the discrepancy are retained. No claim is made that the raw Trivy scan is clean.
 
 ## Repository layout
 
