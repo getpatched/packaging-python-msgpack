@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 2,
+  "id": "debian-trixie-amd64",
+  "base": {
+    "distribution": "Debian",
+    "release": "13",
+    "codename": "trixie",
+    "sourcePocket": "release",
+    "architecture": "amd64"
+  },
+  "source": {
+    "format": "3.0 (quilt)",
+    "version": "1.0.3-3",
+    "publication": "https://tracker.debian.org/pkg/python-msgpack",
+    "publishedAt": "2023-08-15T14:13:48+00:00",
+    "descriptor": {
+      "name": "python-msgpack_1.0.3-3.dsc",
+      "url": "https://snapshot-fastly.debian.org/archive/debian/20261030T000000Z/pool/main/p/python-msgpack/python-msgpack_1.0.3-3.dsc",
+      "sha256": "e93096dbce55d2adf846ad87e6ffc97c94e8d1342f616f86fd24fa2497e798da",
+      "bytes": 2187
+    },
+    "files": [
+      {
+        "name": "python-msgpack_1.0.3.orig.tar.xz",
+        "role": "upstream-source",
+        "url": "https://snapshot-fastly.debian.org/archive/debian/20261030T000000Z/pool/main/p/python-msgpack/python-msgpack_1.0.3.orig.tar.xz",
+        "sha256": "aaf224d71056d291308a57ec2aa7dbe7f99d8fb4bea115d411b57827ed749197",
+        "bytes": 46112
+      },
+      {
+        "name": "python-msgpack_1.0.3-3.debian.tar.xz",
+        "role": "debian-packaging",
+        "url": "https://snapshot-fastly.debian.org/archive/debian/20261030T000000Z/pool/main/p/python-msgpack/python-msgpack_1.0.3-3.debian.tar.xz",
+        "sha256": "5a1d1849b85c0ded55a4b5905c4d084d9e9f0d1e711a26fa873c0e7c907ef049",
+        "bytes": 5380
+      }
+    ],
+    "signatureVerification": {
+      "verified": false,
+      "note": "The signed Debian archive Sources index and descriptor-declared source hashes were verified from the pinned 20261030T000000Z snapshot. The upstream detached signature has not been separately validated against a trusted keyring."
+    }
+  },
+  "supportedSourceVersions": [
+    "1.0.3-3"
+  ],
+  "packageVersion": "1.0.3-3+getpatched1",
+  "releaseSerial": 1,
+  "changelog": {
+    "distribution": "trixie",
+    "urgency": "high",
+    "maintainer": "GetPatched Maintainers <packages@getpatched.dev>",
+    "date": "Tue, 03 Nov 2026 00:00:00 +0000"
+  },
+  "binaryPackages": [
+    "python3-msgpack"
+  ],
+  "advisoryPackages": [
+    "python3-msgpack"
+  ],
+  "patches": [
+    "cve-2026-57585-unpacker-state-reset"
+  ],
+  "releaseAccess": {
+    "policy": "public-after-checks",
+    "sponsorDelayHours": 0,
+    "sponsorEligibility": null,
+    "earlyBinaryLicenseId": null,
+    "publicContributionSpdx": "MIT",
+    "earlyUse": [
+      "private",
+      "commercial"
+    ],
+    "earlyRedistributionAllowed": false,
+    "publicLicenseScope": "getpatched-authored-contributions-only"
+  },
+  "status": "unreleased-development-candidate"
+}

@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 2,
+  "id": "debian-bookworm-amd64",
+  "base": {
+    "distribution": "Debian",
+    "release": "12",
+    "codename": "bookworm",
+    "sourcePocket": "release",
+    "architecture": "amd64"
+  },
+  "source": {
+    "format": "3.0 (quilt)",
+    "version": "1.0.3-2",
+    "publication": "https://tracker.debian.org/pkg/python-msgpack",
+    "publishedAt": "2022-11-20T16:38:00+00:00",
+    "descriptor": {
+      "name": "python-msgpack_1.0.3-2.dsc",
+      "url": "https://snapshot-fastly.debian.org/archive/debian/20261030T000000Z/pool/main/p/python-msgpack/python-msgpack_1.0.3-2.dsc",
+      "sha256": "121d4bafef6f75bdc6fa061abdcfcbb719ff386896182003d0b54f01b0186c81",
+      "bytes": 2187
+    },
+    "files": [
+      {
+        "name": "python-msgpack_1.0.3.orig.tar.xz",
+        "role": "upstream-source",
+        "url": "https://snapshot-fastly.debian.org/archive/debian/20261030T000000Z/pool/main/p/python-msgpack/python-msgpack_1.0.3.orig.tar.xz",
+        "sha256": "aaf224d71056d291308a57ec2aa7dbe7f99d8fb4bea115d411b57827ed749197",
+        "bytes": 46112
+      },
+      {
+        "name": "python-msgpack_1.0.3-2.debian.tar.xz",
+        "role": "debian-packaging",
+        "url": "https://snapshot-fastly.debian.org/archive/debian/20261030T000000Z/pool/main/p/python-msgpack/python-msgpack_1.0.3-2.debian.tar.xz",
+        "sha256": "ccf552a4bc18b8f527c076b9df245bb68d8ea02f24199d09105acd76fca3b7c7",
+        "bytes": 5252
+      }
+    ],
+    "signatureVerification": {
+      "verified": false,
+      "note": "The signed Debian archive Sources index and descriptor-declared source hashes were verified from the pinned 20261030T000000Z snapshot. The upstream detached signature has not been separately validated against a trusted keyring."
+    }
+  },
+  "supportedSourceVersions": [
+    "1.0.3-2"
+  ],
+  "packageVersion": "1.0.3-2+getpatched1",
+  "releaseSerial": 1,
+  "changelog": {
+    "distribution": "bookworm",
+    "urgency": "high",
+    "maintainer": "GetPatched Maintainers <packages@getpatched.dev>",
+    "date": "Tue, 03 Nov 2026 00:00:00 +0000"
+  },
+  "binaryPackages": [
+    "python3-msgpack"
+  ],
+  "advisoryPackages": [
+    "python3-msgpack"
+  ],
+  "patches": [
+    "cve-2026-57585-unpacker-state-reset"
+  ],
+  "releaseAccess": {
+    "policy": "public-after-checks",
+    "sponsorDelayHours": 0,
+    "sponsorEligibility": null,
+    "earlyBinaryLicenseId": null,
+    "publicContributionSpdx": "MIT",
+    "earlyUse": [
+      "private",
+      "commercial"
+    ],
+    "earlyRedistributionAllowed": false,
+    "publicLicenseScope": "getpatched-authored-contributions-only"
+  },
+  "status": "unreleased-development-candidate"
+}

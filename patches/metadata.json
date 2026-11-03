@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 3,
+  "patches": [
+    {
+      "id": "cve-2026-57585-unpacker-state-reset",
+      "kind": "security",
+      "file": "CVE-2026-57585.patch",
+      "sha256": "d575faba0e535ec865e4186f1232ae76f9e0c26df2865a843ef5dc75959f5ae5",
+      "title": "Clear Unpacker state after decode errors",
+      "description": "Releases partially constructed map keys and nested objects and resets parser context when decoding fails, preventing a caught error followed by Unpacker reuse from dereferencing stale state.",
+      "cves": [
+        "CVE-2026-57585"
+      ],
+      "upstream": {
+        "repository": "https://github.com/msgpack/msgpack-python",
+        "commit": "2c56ddb5d0025ed481d962c0f5d62d19dec7476d",
+        "url": "https://github.com/msgpack/msgpack-python/commit/2c56ddb5d0025ed481d962c0f5d62d19dec7476d.patch"
+      },
+      "appliesTo": [
+        {
+          "target": "debian-bookworm-amd64",
+          "sourceVersion": "1.0.3-2"
+        },
+        {
+          "target": "debian-trixie-amd64",
+          "sourceVersion": "1.0.3-3"
+        }
+      ],
+      "dep3": {
+        "origin": "Targeted backport of the upstream parser-state cleanup to Debian's python-msgpack 1.0.3 source. The upstream patch does not apply without adaptation because Debian's older unpack_template.h uses different parser structure context.",
+        "forwarded": "not-needed",
+        "lastUpdate": "2026-11-03"
+      },
+      "tests": [
+        {
+          "id": "python-msgpack-unpacker-error-reuse",
+          "runner": "getpatched/platform:verification/regression.py",
+          "fixtures": [
+            {
+              "path": "tests/fixtures/cve-2026-57585-unpacker-reuse.py",
+              "sha256": "56c21b6a1819e6ae23072b53beb300c7fad4a6030c5f875858611066f50a1537"
+            }
+          ],
+          "baselineExpectation": "The exact installed Debian source crashes with SIGSEGV when skip() is called after catching ValueError from malformed map input.",
+          "patchedExpectation": "The same error followed by skip() exits normally; malformed input remains rejected."
+        }
+      ]
+    }
+  ]
+}
