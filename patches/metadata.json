@@ -38,7 +38,7 @@
           "fixtures": [
             {
               "path": "tests/fixtures/cve-2026-57585-unpacker-reuse.py",
-              "sha256": "56c21b6a1819e6ae23072b53beb300c7fad4a6030c5f875858611066f50a1537"
+              "sha256": "649d9df93b91cc7458aa16296edd6b0eb433fcc3d7715669e9ea9bb51acbab8b"
             }
           ],
           "baselineExpectation": "The exact installed Debian source crashes with SIGSEGV when skip() is called after catching ValueError from malformed map input.",
