@@ -3,4 +3,4 @@ set -euo pipefail
 
 # Exercise the upstream suite with the pure-Python implementation forced.
 export MSGPACK_PUREPYTHON=1
-python3 -m pytest test
+python3 -m pytest --junitxml=/reports/upstream-junit.xml test
