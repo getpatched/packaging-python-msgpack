@@ -18,9 +18,9 @@ permissions:
 jobs:
   package:
     if: github.event_name != 'schedule' && !inputs.drift
-    uses: getpatched/actions/.github/workflows/package-ci.yml@760af289a4398e9a439ee11afd145fce32d65753
+    uses: getpatched/actions/.github/workflows/package-ci.yml@67106330d413dfde3bea2fb1d053b2467dda1e00
     with:
-      tooling_ref: 760af289a4398e9a439ee11afd145fce32d65753
+      tooling_ref: 67106330d413dfde3bea2fb1d053b2467dda1e00
   drift:
     name: Drift (${{ matrix.branch }})
     if: github.event_name == 'schedule' || inputs.drift
