@@ -22,8 +22,14 @@ jobs:
     with:
       tooling_ref: 9b4592da127d2a84142f0c40fd7ded904b0661f7
   drift:
+    name: Drift (${{ matrix.branch }})
     if: github.event_name == 'schedule' || inputs.drift
+    strategy:
+      fail-fast: false
+      matrix:
+        branch: ["main", "getpatched/debian-bookworm", "getpatched/debian-trixie"]
     uses: getpatched/actions/.github/workflows/package-ci.yml@9b4592da127d2a84142f0c40fd7ded904b0661f7
     with:
       tooling_ref: 9b4592da127d2a84142f0c40fd7ded904b0661f7
       drift: true
+      recipe_ref: refs/heads/${{ matrix.branch }}
