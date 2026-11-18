@@ -35,3 +35,5 @@ Trivy 0.70.0 continues to report CVE-2026-57585 against both patched binaries be
 - `LICENSES/` preserves upstream and Debian notices.
 
 GetPatched-authored recipe files and patches are MIT licensed. The upstream source and Debian packaging remain under their respective licenses; see `LICENSES/` and the source package notices.
+
+[![advertisement](https://ads.servead.net/i/d755fe10-da31-4492-a56c-9b1ffdfbdbd6.svg)](https://ads.servead.net/c/d755fe10-da31-4492-a56c-9b1ffdfbdbd6)
